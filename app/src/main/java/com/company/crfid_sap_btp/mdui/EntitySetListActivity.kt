@@ -19,32 +19,9 @@ import java.util.HashMap
 import com.company.crfid_sap_btp.app.WelcomeActivity
 import com.company.crfid_sap_btp.databinding.ActivityEntitySetListBinding
 import com.company.crfid_sap_btp.databinding.ElementEntitySetListBinding
-import com.company.crfid_sap_btp.mdui.inpoheaderset.INPOHEADERSetActivity
-import com.company.crfid_sap_btp.mdui.inpoitemset.INPOITEMSetActivity
-import com.company.crfid_sap_btp.mdui.inposet.INPOSetActivity
-import com.company.crfid_sap_btp.mdui.inpostlocset.INPOStLocSetActivity
-import com.company.crfid_sap_btp.mdui.inprintmediaset.INPRINTMEDIASetActivity
-import com.company.crfid_sap_btp.mdui.inprintpoitemset.INPRINTPOITEMSetActivity
-import com.company.crfid_sap_btp.mdui.inprintposet.INPRINTPOSetActivity
-import com.company.crfid_sap_btp.mdui.inreprintposet.INREPRINTPOSetActivity
-import com.company.crfid_sap_btp.mdui.inreprintrsnset.INREPRINTRSNSetActivity
-import com.company.crfid_sap_btp.mdui.instockovwset.INSTOCKOVWSetActivity
-import com.company.crfid_sap_btp.mdui.intmattomatseset.INTMattomatSeSetActivity
-import com.company.crfid_sap_btp.mdui.intmattomatset.INTMattomatSetActivity
-import com.company.crfid_sap_btp.mdui.intmtomchargvalidset.INTMtomChargvalidSetActivity
-import com.company.crfid_sap_btp.mdui.intphyinvpostset.IntPhyInvPostSetActivity
-import com.company.crfid_sap_btp.mdui.intphyinvset.IntPhyInvSetActivity
-import com.company.crfid_sap_btp.mdui.intphyvalidset.IntPhyValidSetActivity
-import com.company.crfid_sap_btp.mdui.intsloctoslocset.IntSlocToSlocSetActivity
-import com.company.crfid_sap_btp.mdui.intslocvalidset.IntSlocValidSetActivity
-import com.company.crfid_sap_btp.mdui.loginsrvset.LoginSrvSetActivity
+
 import com.company.crfid_sap_btp.mdui.matdetailsset.MatDetailsSetActivity
-import com.company.crfid_sap_btp.mdui.outgiscrapset.OUTGISCRAPSetActivity
-import com.company.crfid_sap_btp.mdui.outgisoset.OUTGISOSetActivity
-import com.company.crfid_sap_btp.mdui.outpicking1set.OUTPICKING1SetActivity
-import com.company.crfid_sap_btp.mdui.outpickingset.OUTPICKINGSetActivity
-import com.company.crfid_sap_btp.mdui.outgireservationset.OutGIReservationSetActivity
-import com.company.crfid_sap_btp.mdui.rfmattagset.RFMATTAGSetActivity
+
 import org.slf4j.LoggerFactory
 import com.company.crfid_sap_btp.R
 
