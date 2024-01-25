@@ -1,0 +1,2 @@
+rootProject.name = "cRFID_SAP_BTP"
+include ':app'

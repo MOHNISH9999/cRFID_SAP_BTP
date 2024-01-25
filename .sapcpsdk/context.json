@@ -1,0 +1,19 @@
+{
+  "projectInfo": {
+    "projectName": "cRFID_SAP_BTP",
+    "createdDate": "Thursday, January 25, 2024 at 11:11:47 AM",
+    "regenerateProxyClassDate": ""
+  },
+  "cloudApplication": {
+    "cloudApplicationId": "com.sap.crfid.cRFID_Demo",
+    "destinations": [
+      {
+        "id": "com.sap.edm.sampleservice.v2"
+      },
+      {
+        "id": "com.sap.crfid.cRFID_Demo"
+      }
+    ]
+  },
+  "msServerConfigurationName": "SAP Demo"
+}

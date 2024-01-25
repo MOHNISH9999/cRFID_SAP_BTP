@@ -1,0 +1,17 @@
+   ______________________________
+ / \                             \.
+|   | This log file was created  |.
+ \_ | by the Wizard, it contains |.
+    | the configuration data     |.
+    | used for the application   |.
+    | generation.                |.
+    |                            |.
+    | It shouldn't be edited     |.
+    | manually, changing it      |.
+    | won't affect the generated |.
+    | sample.                    |.
+    |   _________________________|___
+    |  /                            /.
+    \_/____________________________/.
+
+{"projectName":"cRFID_SAP_BTP","projectLocation":"C:\\Users\\mohni\\AndroidStudioProjects\\cRFID_SAP_BTP","projectNamespace":"com.company.crfid_sap_btp","accountName":"SAP Demo","serviceURL":"https://aincf-ain-com-sap-crfid-crfid-demo.cfapps.eu10.hana.ondemand.com/","serverURL":"https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/cockpit/v1/org/Crave%20InfoTech_AINCF/space/AIN/","applicationID":"com.sap.crfid.cRFID_Demo","applicationSecurityConfig":"OAUTH","jsonPath":null,"senderID":null,"serverKey":null,"isLogEnabled":true,"isLogUploadEnabled":true,"SAPSDKLocation":"MAVEN_LOCAL","activationType":"appConfigFile","generateJavaCode":false,"generateOnlineApp":true,"isUsageIncluded":false,"isCrashReportIncluded":false,"isMultipleUserMode":false,"isViewBaseFramework":true}
