@@ -1,2 +1,3 @@
 rootProject.name = "cRFID_SAP_BTP"
 include ':app'
+include ':RFIDAPI3Library'

@@ -94,6 +94,8 @@ configurations {
 }
 
 dependencies {
+
+    implementation project(':RFIDAPI3Library')
     // Android framework dependencies
     implementation group: 'androidx.appcompat', name: 'appcompat', version: '1.2.0'
     implementation group: 'androidx.legacy', name: 'legacy-support-v4', version: '1.0.0'
@@ -147,6 +149,8 @@ dependencies {
     // Java code also need this library to convert java class to kotlin class
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+
+    implementation 'org.greenrobot:eventbus:3.3.1'
 }
 
 

@@ -14,6 +14,7 @@ import android.view.*
 import android.widget.ArrayAdapter
 import android.content.Context
 import android.content.Intent
+import android.widget.Button
 import java.util.ArrayList
 import java.util.HashMap
 import com.company.crfid_sap_btp.app.WelcomeActivity
@@ -24,6 +25,7 @@ import com.company.crfid_sap_btp.mdui.matdetailsset.MatDetailsSetActivity
 
 import org.slf4j.LoggerFactory
 import com.company.crfid_sap_btp.R
+import com.company.crfid_sap_btp.rfid.Demo_RFID
 
 /*
  * An activity to display the list of all entity types from the OData service
@@ -34,62 +36,13 @@ class EntitySetListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEntitySetListBinding
 
 
+
     enum class EntitySetName constructor(val entitySetName: String, val titleId: Int, val iconId: Int) {
-//        INPOHEADERSet(
-//            "INPOHEADERSet", R.string.eset_inpoheaderset,
-//            BLUE_ANDROID_ICON
-//        ),
-//        INPOITEMSet("INPOITEMSet", R.string.eset_inpoitemset,
-//            WHITE_ANDROID_ICON),
-//        INPOSet("INPOSet", R.string.eset_inposet,
-//            BLUE_ANDROID_ICON),
-//        INPOStLocSet("INPOStLocSet", R.string.eset_inpostlocset,
-//            WHITE_ANDROID_ICON),
-//        INPRINTMEDIASet("INPRINTMEDIASet", R.string.eset_inprintmediaset,
-//            BLUE_ANDROID_ICON),
-//        INPRINTPOITEMSet("INPRINTPOITEMSet", R.string.eset_inprintpoitemset,
-//            WHITE_ANDROID_ICON),
-//        INPRINTPOSet("INPRINTPOSet", R.string.eset_inprintposet,
-//            BLUE_ANDROID_ICON),
-//        INREPRINTPOSet("INREPRINTPOSet", R.string.eset_inreprintposet,
-//            WHITE_ANDROID_ICON),
-//        INREPRINTRSNSet("INREPRINTRSNSet", R.string.eset_inreprintrsnset,
-//            BLUE_ANDROID_ICON),
-//        INSTOCKOVWSet("INSTOCKOVWSet", R.string.eset_instockovwset,
-//            WHITE_ANDROID_ICON),
-//        INTMattomatSeSet("INTMattomatSeSet", R.string.eset_intmattomatseset,
-//            BLUE_ANDROID_ICON),
-//        INTMattomatSet("INTMattomatSet", R.string.eset_intmattomatset,
-//            WHITE_ANDROID_ICON),
-//        INTMtomChargvalidSet("INTMtomChargvalidSet", R.string.eset_intmtomchargvalidset,
-//            BLUE_ANDROID_ICON),
-//        IntPhyInvPostSet("IntPhyInvPostSet", R.string.eset_intphyinvpostset,
-//            WHITE_ANDROID_ICON),
-//        IntPhyInvSet("IntPhyInvSet", R.string.eset_intphyinvset,
-//            BLUE_ANDROID_ICON),
-//        IntPhyValidSet("IntPhyValidSet", R.string.eset_intphyvalidset,
-//            WHITE_ANDROID_ICON),
-//        IntSlocToSlocSet("IntSlocToSlocSet", R.string.eset_intsloctoslocset,
-//            BLUE_ANDROID_ICON),
-//        IntSlocValidSet("IntSlocValidSet", R.string.eset_intslocvalidset,
-//            WHITE_ANDROID_ICON),
-//        LoginSrvSet("LoginSrvSet", R.string.eset_loginsrvset,
-//            BLUE_ANDROID_ICON),
+
         MatDetailsSet("MatDetailsSet", R.string.eset_matdetailsset,
             WHITE_ANDROID_ICON),
         CycleCounting("Cycle Counting",R.string.eset_cyclecounting, WHITE_ANDROID_ICON),
-//        OUTGISCRAPSet("OUTGISCRAPSet", R.string.eset_outgiscrapset,
-//            BLUE_ANDROID_ICON),
-//        OUTGISOSet("OUTGISOSet", R.string.eset_outgisoset,
-//            WHITE_ANDROID_ICON),
-//        OUTPICKING1Set("OUTPICKING1Set", R.string.eset_outpicking1set,
-//            BLUE_ANDROID_ICON),
-//        OUTPICKINGSet("OUTPICKINGSet", R.string.eset_outpickingset,
-//            WHITE_ANDROID_ICON),
-//        OutGIReservationSet("OutGIReservationSet", R.string.eset_outgireservationset,
-//            BLUE_ANDROID_ICON),
-//        RFMATTAGSet("RFMATTAGSet", R.string.eset_rfmattagset,
-//            WHITE_ANDROID_ICON)
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -100,6 +53,11 @@ class EntitySetListActivity : AppCompatActivity() {
         setContentView(binding.root)
         val toolbar = findViewById<Toolbar>(R.id.toolbar) // to avoid ambiguity
         setSupportActionBar(toolbar)
+
+        binding.rfid.setOnClickListener {
+            val intent = Intent(this, Demo_RFID::class.java)
+            startActivity(intent)
+        }
 
         entitySetNames.clear()
         entitySetNameMap.clear()
@@ -117,32 +75,7 @@ class EntitySetListActivity : AppCompatActivity() {
             val entitySetName = entitySetNameMap[adapter.getItem(position)!!]
             val context = this@EntitySetListActivity
             val intent: Intent = when (entitySetName) {
-//                EntitySetName.INPOHEADERSet -> Intent(context, INPOHEADERSetActivity::class.java)
-//                EntitySetName.INPOITEMSet -> Intent(context, INPOITEMSetActivity::class.java)
-//                EntitySetName.INPOSet -> Intent(context, INPOSetActivity::class.java)
-//                EntitySetName.INPOStLocSet -> Intent(context, INPOStLocSetActivity::class.java)
-//                EntitySetName.INPRINTMEDIASet -> Intent(context, INPRINTMEDIASetActivity::class.java)
-//                EntitySetName.INPRINTPOITEMSet -> Intent(context, INPRINTPOITEMSetActivity::class.java)
-//                EntitySetName.INPRINTPOSet -> Intent(context, INPRINTPOSetActivity::class.java)
-//                EntitySetName.INREPRINTPOSet -> Intent(context, INREPRINTPOSetActivity::class.java)
-//                EntitySetName.INREPRINTRSNSet -> Intent(context, INREPRINTRSNSetActivity::class.java)
-//                EntitySetName.INSTOCKOVWSet -> Intent(context, INSTOCKOVWSetActivity::class.java)
-//                EntitySetName.INTMattomatSeSet -> Intent(context, INTMattomatSeSetActivity::class.java)
-//                EntitySetName.INTMattomatSet -> Intent(context, INTMattomatSetActivity::class.java)
-//                EntitySetName.INTMtomChargvalidSet -> Intent(context, INTMtomChargvalidSetActivity::class.java)
-//                EntitySetName.IntPhyInvPostSet -> Intent(context, IntPhyInvPostSetActivity::class.java)
-//                EntitySetName.IntPhyInvSet -> Intent(context, IntPhyInvSetActivity::class.java)
-//                EntitySetName.IntPhyValidSet -> Intent(context, IntPhyValidSetActivity::class.java)
-//                EntitySetName.IntSlocToSlocSet -> Intent(context, IntSlocToSlocSetActivity::class.java)
-//                EntitySetName.IntSlocValidSet -> Intent(context, IntSlocValidSetActivity::class.java)
-//                EntitySetName.LoginSrvSet -> Intent(context, LoginSrvSetActivity::class.java)
                 EntitySetName.MatDetailsSet -> Intent(context, MatDetailsSetActivity::class.java)
-//                EntitySetName.OUTGISCRAPSet -> Intent(context, OUTGISCRAPSetActivity::class.java)
-//                EntitySetName.OUTGISOSet -> Intent(context, OUTGISOSetActivity::class.java)
-//                EntitySetName.OUTPICKING1Set -> Intent(context, OUTPICKING1SetActivity::class.java)
-//                EntitySetName.OUTPICKINGSet -> Intent(context, OUTPICKINGSetActivity::class.java)
-//                EntitySetName.OutGIReservationSet -> Intent(context, OutGIReservationSetActivity::class.java)
-//                EntitySetName.RFMATTAGSet -> Intent(context, RFMATTAGSetActivity::class.java)
                 else -> return@listView
             }
             context.startActivity(intent)

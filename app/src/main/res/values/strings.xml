@@ -1,5 +1,4 @@
-<resources  xmlns:tools="http://schemas.android.com/tools"
-             tools:ignore="MissingTranslation" >
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="application_name">cRFID_SAP_BTP</string>
     <string name="eset_inpoheaderset">INPOHEADERSet</string>
     <string name="eset_inpoheaderset_single">InPoHeader</string>

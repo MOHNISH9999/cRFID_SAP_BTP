@@ -10,6 +10,7 @@ import com.company.crfid_sap_btp.mdui.BundleKeys
 import com.company.crfid_sap_btp.mdui.InterfacedFragment
 import com.company.crfid_sap_btp.mdui.UIConstants
 import com.company.crfid_sap_btp.repository.OperationResult
+import com.company.crfid_sap_btp.rfid.BaseActivity_RFID
 import com.company.crfid_sap_btp.viewmodel.matdetails.MatDetailsViewModel
 import com.sap.cloud.android.odata.zcims_int_srv_entities.MatDetails
 import com.sap.cloud.android.odata.zcims_int_srv_entities.ZCIMS_INT_SRV_EntitiesMetadata.EntityTypes

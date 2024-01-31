@@ -214,7 +214,6 @@ class Repository<T : EntityValue>(
                 })
         }
     }
-
     /**
      * Create method for the entity set
      * @param newEntity - entity to create
