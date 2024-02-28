@@ -103,6 +103,22 @@ class MatDetailsSetListFragment : InterfacedFragment<MatDetails, FragmentEntityi
         }
     }
 
+    override fun onBarcodeResult(barcode: String?) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onRFIDTagIDResult(tagID: String?) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onFixedReaderTagIDResult(tagID: String?) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onRFIDTagSearched(rssi: Short) {
+        TODO("Not yet implemented")
+    }
+
     override fun onSaveInstanceState(outState: Bundle) {
         outState.putBoolean("ActionMode", isInActionMode)
         super.onSaveInstanceState(outState)

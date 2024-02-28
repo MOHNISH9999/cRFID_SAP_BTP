@@ -80,6 +80,22 @@ class MatDetailsSetDetailFragment : InterfacedFragment<MatDetails, FragmentMatde
         }
     }
 
+    override fun onBarcodeResult(barcode: String?) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onRFIDTagIDResult(tagID: String?) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onFixedReaderTagIDResult(tagID: String?) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onRFIDTagSearched(rssi: Short) {
+        TODO("Not yet implemented")
+    }
+
     /**
      * Completion callback for delete operation
      *

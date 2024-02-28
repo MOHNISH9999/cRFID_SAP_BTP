@@ -4,13 +4,14 @@ import android.os.Build
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.view.*
+import android.widget.EditText
+import android.widget.TextView
 import com.company.crfid_sap_btp.R
 import com.company.crfid_sap_btp.databinding.FragmentMatdetailssetCreateBinding
 import com.company.crfid_sap_btp.mdui.BundleKeys
 import com.company.crfid_sap_btp.mdui.InterfacedFragment
 import com.company.crfid_sap_btp.mdui.UIConstants
 import com.company.crfid_sap_btp.repository.OperationResult
-import com.company.crfid_sap_btp.rfid.BaseActivity_RFID
 import com.company.crfid_sap_btp.viewmodel.matdetails.MatDetailsViewModel
 import com.sap.cloud.android.odata.zcims_int_srv_entities.MatDetails
 import com.sap.cloud.android.odata.zcims_int_srv_entities.ZCIMS_INT_SRV_EntitiesMetadata.EntityTypes
@@ -44,6 +45,9 @@ class MatDetailsSetCreateFragment : InterfacedFragment<MatDetails, FragmentMatde
     /** The update menu item */
     private lateinit var updateMenuItem: MenuItem
 
+    var tagIDNEW:String=""
+    lateinit var tagidid:SimplePropertyFormCell
+
     private val isMatDetailsValid: Boolean
         get() {
             var isValid = true
@@ -53,6 +57,7 @@ class MatDetailsSetCreateFragment : InterfacedFragment<MatDetails, FragmentMatde
                     val propertyName = simplePropertyFormCell.tag as String
                     val property = EntityTypes.matDetails.getProperty(propertyName)
                     val value = simplePropertyFormCell.value.toString()
+
                     if (!isValidProperty(property, value)) {
                         simplePropertyFormCell.setTag(R.id.TAG_HAS_MANDATORY_ERROR, true)
                         val errorMessage = resources.getString(R.string.mandatory_warning)
@@ -116,6 +121,7 @@ class MatDetailsSetCreateFragment : InterfacedFragment<MatDetails, FragmentMatde
                 matDetailsEntityCopy = workingCopy
             }
         }
+        switchToSingleScanMode()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -140,9 +146,30 @@ class MatDetailsSetCreateFragment : InterfacedFragment<MatDetails, FragmentMatde
         }
     }
 
+    override fun onBarcodeResult(barcode: String?) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onRFIDTagIDResult(tagID: String?) {
+
+        tagidid.value = tagID
+    }
+
+    override fun onFixedReaderTagIDResult(tagID: String?) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onRFIDTagSearched(rssi: Short) {
+        TODO("Not yet implemented")
+    }
+     fun givTag():String{
+         return tagIDNEW
+     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if(secondaryToolbar != null) secondaryToolbar!!.title = activityTitle else activity?.title = activityTitle
+        tagidid=view.findViewById(R.id.tagidid)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

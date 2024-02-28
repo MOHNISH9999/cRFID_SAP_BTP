@@ -1,48 +1,47 @@
 package com.company.crfid_sap_btp.mdui
 
+import android.R.attr.duration
+import android.content.Context
+import android.content.Intent
+import android.os.Bundle
+import android.view.*
+import android.widget.ArrayAdapter
+import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
+import com.company.crfid_sap_btp.R
 import com.company.crfid_sap_btp.app.SAPWizardApplication
-
+import com.company.crfid_sap_btp.app.WelcomeActivity
+import com.company.crfid_sap_btp.databinding.ActivityEntitySetListBinding
+import com.company.crfid_sap_btp.databinding.ElementEntitySetListBinding
+import com.company.crfid_sap_btp.mdui.matdetailsset.MatDetailsSetActivity
+import com.company.crfid_sap_btp.rfid.BaseActivity
+import com.company.crfid_sap_btp.rfid.RFIDManager
+import com.company.crfid_sap_btp.rfid.SettingsActivity2
+import com.google.android.material.color.utilities.Score.score
 import com.sap.cloud.mobile.flowv2.core.DialogHelper
 import com.sap.cloud.mobile.flowv2.core.Flow
 import com.sap.cloud.mobile.flowv2.core.FlowContextRegistry
 import com.sap.cloud.mobile.flowv2.model.FlowType
 import com.sap.cloud.mobile.flowv2.securestore.UserSecureStoreDelegate
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import android.view.*
-import android.widget.ArrayAdapter
-import android.content.Context
-import android.content.Intent
-import android.widget.Button
-import java.util.ArrayList
-import java.util.HashMap
-import com.company.crfid_sap_btp.app.WelcomeActivity
-import com.company.crfid_sap_btp.databinding.ActivityEntitySetListBinding
-import com.company.crfid_sap_btp.databinding.ElementEntitySetListBinding
-
-import com.company.crfid_sap_btp.mdui.matdetailsset.MatDetailsSetActivity
-
+import com.zebra.rfid.api3.TagData
 import org.slf4j.LoggerFactory
-import com.company.crfid_sap_btp.R
-import com.company.crfid_sap_btp.rfid.Demo_RFID
+
 
 /*
  * An activity to display the list of all entity types from the OData service
  */
-class EntitySetListActivity : AppCompatActivity() {
+class EntitySetListActivity : BaseActivity() {
     private val entitySetNames = ArrayList<String>()
     private val entitySetNameMap = HashMap<String, EntitySetName>()
     private lateinit var binding: ActivityEntitySetListBinding
 
-
+    var rFIDManager: RFIDManager? = null
 
     enum class EntitySetName constructor(val entitySetName: String, val titleId: Int, val iconId: Int) {
 
         MatDetailsSet("MatDetailsSet", R.string.eset_matdetailsset,
             WHITE_ANDROID_ICON),
         CycleCounting("Cycle Counting",R.string.eset_cyclecounting, WHITE_ANDROID_ICON),
-
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,10 +53,10 @@ class EntitySetListActivity : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar) // to avoid ambiguity
         setSupportActionBar(toolbar)
 
-        binding.rfid.setOnClickListener {
-            val intent = Intent(this, Demo_RFID::class.java)
-            startActivity(intent)
-        }
+
+//        rFIDManager= RFIDManager()
+//        rFIDManager!!.onCreate(this,this)
+
 
         entitySetNames.clear()
         entitySetNameMap.clear()
@@ -70,6 +69,10 @@ class EntitySetListActivity : AppCompatActivity() {
         val adapter = EntitySetListAdapter(this, R.layout.element_entity_set_list, entitySetNames)
 
         listView.adapter = adapter
+        binding.rfid.setOnClickListener {
+            val intent= Intent(this, SettingsActivity2::class.java)
+            startActivity(intent)
+        }
 
         listView.setOnItemClickListener listView@{ _, _, position, _ ->
             val entitySetName = entitySetNameMap[adapter.getItem(position)!!]
@@ -81,7 +84,6 @@ class EntitySetListActivity : AppCompatActivity() {
             context.startActivity(intent)
         }
     }
-
     inner class EntitySetListAdapter internal constructor(context: Context, resource: Int, entitySetNames: List<String>)
                     : ArrayAdapter<String>(context, resource, entitySetNames) {
         override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
@@ -171,6 +173,23 @@ class EntitySetListActivity : AppCompatActivity() {
         }
     }
 
+    override fun onBarcodeResult(barcode: String?) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onRFIDTagIDResult(tagID: String?) {
+        Toast.makeText(this,tagID,Toast.LENGTH_SHORT).show()
+
+    }
+
+    override fun onFixedReaderTagIDResult(tagID: String?) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onRFIDTagSearched(rssi: Short) {
+        TODO("Not yet implemented")
+    }
+
     private fun navForInitialize() {
         if ((application as SAPWizardApplication).sapServiceManager == null) {
             val intent = Intent(this, WelcomeActivity::class.java)
@@ -187,4 +206,14 @@ class EntitySetListActivity : AppCompatActivity() {
         private const val BLUE_ANDROID_ICON = R.drawable.ic_android_blue
         private const val WHITE_ANDROID_ICON = R.drawable.ic_android_white
     }
+
+//    override fun handleTagdata(tagData: Array<out TagData>?) {
+//    }
+//
+//    override fun handleTriggerPress(pressed: Boolean) {
+//
+//        runOnUiThread {
+//            Toast.makeText(this,"Trigger Pressed",Toast.LENGTH_SHORT).show()
+//        }
+//    }
 }

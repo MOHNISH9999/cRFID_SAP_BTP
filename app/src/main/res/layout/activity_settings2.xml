@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".rfid.SettingsActivity2">
+
+    <LinearLayout
+        android:id="@+id/bottonLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_margin="5dp"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:id="@+id/buttonConnect"
+            android:text="Connect HH"
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_margin="5dp"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:id="@+id/buttonDisConnect"
+            android:background="@color/colorPrimary"
+            android:text="DisConnect HH"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvInfo"
+        android:layout_margin="10dp"
+        android:textColor="@color/black"
+        android:layout_above="@+id/bottonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:text="Select Reader Power : "
+            android:textColor="#A2A3A5"
+            android:textSize="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <!--adding a radio button -->
+            <RadioButton
+                android:id="@+id/rbMin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:padding="4dp"
+                android:textColor="#333333"
+                android:text="MIN (1 feet approx)"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <!--adding a radio button -->
+            <RadioButton
+                android:id="@+id/rbAVG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:padding="4dp"
+                android:textColor="#333333"
+                android:text="AVG (5 feet approx)"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <!--adding a radio button -->
+            <RadioButton
+                android:id="@+id/rbMAX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:padding="4dp"
+                android:textColor="#333333"
+                android:text="MAX (10 feet approx)"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+        </RadioGroup>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="50dp"
+            android:text="Select Scanner : "
+            android:textColor="#A2A3A5"
+            android:textSize="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroup2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <!--adding a radio button -->
+            <RadioButton
+                android:id="@+id/rbRFID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:padding="4dp"
+                android:text="HH RFID"
+                android:textColor="#333333"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <!--adding a radio button -->
+            <RadioButton
+                android:id="@+id/rbBarcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:padding="4dp"
+                android:text="HH Barcode"
+                android:textColor="#333333"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <!--        <RadioButton-->
+            <!--            android:id="@+id/rbFixedReader"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:checked="false"-->
+            <!--            android:padding="4dp"-->
+            <!--            android:text="Fixed Reader"-->
+            <!--            android:textColor="#333333"-->
+            <!--            android:textAlignment="center"-->
+            <!--            android:textSize="20sp" />-->
+            <!--adding a radio button -->
+
+        </RadioGroup>
+
+
+        <!--        <androidx.appcompat.widget.AppCompatTextView-->
+        <!--            android:layout_marginTop="50dp"-->
+        <!--            android:text="Credentials : "-->
+        <!--            android:textColor="#A2A3A5"-->
+        <!--            android:textSize="16dp"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"/>-->
+
+        <!--        <androidx.appcompat.widget.AppCompatEditText-->
+        <!--            android:layout_margin="5dp"-->
+        <!--            android:id="@+id/etUsername"-->
+        <!--            android:textColor="#333333"-->
+        <!--            android:hint="Username"-->
+        <!--            android:textSize="20sp"-->
+        <!--            android:layout_width="150dp"-->
+        <!--            android:layout_height="wrap_content"/>-->
+
+        <!--        <androidx.appcompat.widget.AppCompatEditText-->
+        <!--            android:layout_margin="5dp"-->
+        <!--            android:id="@+id/etPassword"-->
+        <!--            android:textColor="#333333"-->
+        <!--            android:inputType="textPassword"-->
+        <!--            android:hint="Password"-->
+        <!--            android:textSize="20sp"-->
+        <!--            android:layout_width="150dp"-->
+        <!--            android:layout_height="wrap_content"/>-->
+
+    </LinearLayout>
+
+</RelativeLayout>
