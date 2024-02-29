@@ -33,13 +33,13 @@
                     <com.sap.cloud.mobile.fiori.misc.KeyValueCell
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:keyText="Mblnr"
+                        app:keyText="Material Document No"
                         app:valueText="@{matDetails.getOptionalValue(MatDetails.mblnr).toString()}" />
 
                     <com.sap.cloud.mobile.fiori.misc.KeyValueCell
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:keyText="Matnr"
+                        app:keyText="Material Number"
                         app:valueText="@{matDetails.getOptionalValue(MatDetails.matnr).toString()}" />
 
                     <com.sap.cloud.mobile.fiori.misc.KeyValueCell
@@ -51,43 +51,43 @@
                     <com.sap.cloud.mobile.fiori.misc.KeyValueCell
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:keyText="Ebeln"
+                        app:keyText="Purchase Order"
                         app:valueText="@{matDetails.getOptionalValue(MatDetails.ebeln).toString()}" />
 
                     <com.sap.cloud.mobile.fiori.misc.KeyValueCell
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:keyText="Zdate"
+                        app:keyText="Posting date"
                         app:valueText="@{matDetails.getOptionalValue(MatDetails.zdate).toString()}" />
 
                     <com.sap.cloud.mobile.fiori.misc.KeyValueCell
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:keyText="Werks"
+                        app:keyText="Plant"
                         app:valueText="@{matDetails.getOptionalValue(MatDetails.werks).toString()}" />
 
                     <com.sap.cloud.mobile.fiori.misc.KeyValueCell
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:keyText="Mcod1"
+                        app:keyText="Vendor Name"
                         app:valueText="@{matDetails.getOptionalValue(MatDetails.mcod1).toString()}" />
 
                     <com.sap.cloud.mobile.fiori.misc.KeyValueCell
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:keyText="Maktx"
+                        app:keyText="Material Description"
                         app:valueText="@{matDetails.getOptionalValue(MatDetails.maktx).toString()}" />
 
                     <com.sap.cloud.mobile.fiori.misc.KeyValueCell
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:keyText="ZbinNo"
+                        app:keyText="Bin Number"
                         app:valueText="@{matDetails.getOptionalValue(MatDetails.zbinNo).toString()}" />
 
                     <com.sap.cloud.mobile.fiori.misc.KeyValueCell
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:keyText="Lgort"
+                        app:keyText="Storage Location"
                         app:valueText="@{matDetails.getOptionalValue(MatDetails.lgort).toString()}" />
 
                     <com.sap.cloud.mobile.fiori.misc.KeyValueCell
@@ -99,13 +99,13 @@
                     <com.sap.cloud.mobile.fiori.misc.KeyValueCell
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:keyText="Menge"
+                        app:keyText="Quantity"
                         app:valueText="@{matDetails.getOptionalValue(MatDetails.menge).toString()}" />
 
                     <com.sap.cloud.mobile.fiori.misc.KeyValueCell
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:keyText="Vfdat"
+                        app:keyText="Expirty Date"
                         app:valueText="@{matDetails.getOptionalValue(MatDetails.vfdat).toString()}" />
 
                     <com.sap.cloud.mobile.fiori.misc.KeyValueCell
@@ -117,13 +117,13 @@
                     <com.sap.cloud.mobile.fiori.misc.KeyValueCell
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:keyText="Meins"
+                        app:keyText="Base Unit"
                         app:valueText="@{matDetails.getOptionalValue(MatDetails.meins).toString()}" />
 
                     <com.sap.cloud.mobile.fiori.misc.KeyValueCell
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:keyText="MengeInv"
+                        app:keyText="Count Quantity"
                         app:valueText="@{matDetails.getOptionalValue(MatDetails.mengeInv).toString()}" />
 
                     <RelativeLayout

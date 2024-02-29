@@ -157,7 +157,7 @@ class MatDetailsSetDetailFragment : InterfacedFragment<MatDetails, FragmentMatde
                 footnote = "You can set the header footnote here."
                 description = "You can add a detailed item description here."
             }
-            it.setTag("#tag1", 0)
+            it.setTag("#tag1"+matDetailsEntity.getOptionalValue(MatDetails.lgort), 0)
             it.setTag("#tag3", 2)
             it.setTag("#tag2", 1)
 

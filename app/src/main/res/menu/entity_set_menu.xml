@@ -7,6 +7,11 @@
         android:title="@string/menu_item_settings"
         app:showAsAction="never" />
     <item
+        android:id="@+id/menu_rfid_settings"
+        android:icon="@drawable/ic_outline_settings_24px"
+        android:title="RFID Settings"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/menu_logout"
         android:title="@string/logout"
         app:showAsAction="never" />

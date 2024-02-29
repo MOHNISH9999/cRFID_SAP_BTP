@@ -3,17 +3,17 @@ package com.company.crfid_sap_btp.app
 import android.app.Application
 import android.content.SharedPreferences
 import androidx.preference.PreferenceManager
-import com.sap.cloud.mobile.foundation.model.AppConfig
-import com.company.crfid_sap_btp.service.SAPServiceManager
 import com.company.crfid_sap_btp.repository.RepositoryFactory
 import com.company.crfid_sap_btp.rfid.Barcode
 import com.company.crfid_sap_btp.rfid.BarcodeEvent
 import com.company.crfid_sap_btp.rfid.RFIDManager
 import com.company.crfid_sap_btp.rfid.RFIDTagReadEvent
 import com.company.crfid_sap_btp.rfid.RFIDTriggerEvent
+import com.company.crfid_sap_btp.service.SAPServiceManager
+import com.sap.cloud.mobile.foundation.logging.LoggingService
 import com.sap.cloud.mobile.foundation.mobileservices.MobileService
 import com.sap.cloud.mobile.foundation.mobileservices.SDKInitializer
-import com.sap.cloud.mobile.foundation.logging.LoggingService
+import com.sap.cloud.mobile.foundation.model.AppConfig
 import com.sap.cloud.mobile.foundation.settings.policies.LogPolicy
 import com.sap.cloud.mobile.foundation.theme.ThemeDownloadService
 import com.zebra.rfid.api3.TagData
@@ -25,17 +25,11 @@ import com.zebra.scannercontrol.SDKHandler
 import org.greenrobot.eventbus.EventBus
 
 
-class SAPWizardApplication: Application() , RFIDManager.ResponseHandlerInterface,
+class SAPWizardApplication : Application(), RFIDManager.ResponseHandlerInterface,
     IDcsSdkApiDelegate {
 
 
     var rFIDManager: RFIDManager? = null
-
-
-
-
-
-
 
 
     internal var isApplicationUnlocked = false
@@ -45,6 +39,7 @@ class SAPWizardApplication: Application() , RFIDManager.ResponseHandlerInterface
      * Manages and provides access to OData stores providing data for the app.
      */
     internal var sapServiceManager: SAPServiceManager? = null
+
     /**
      * Application-wide RepositoryFactory
      */

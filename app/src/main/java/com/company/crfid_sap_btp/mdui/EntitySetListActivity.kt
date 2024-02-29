@@ -42,6 +42,7 @@ class EntitySetListActivity : BaseActivity() {
         MatDetailsSet("MatDetailsSet", R.string.eset_matdetailsset,
             WHITE_ANDROID_ICON),
         CycleCounting("Cycle Counting",R.string.eset_cyclecounting, WHITE_ANDROID_ICON),
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,16 +70,13 @@ class EntitySetListActivity : BaseActivity() {
         val adapter = EntitySetListAdapter(this, R.layout.element_entity_set_list, entitySetNames)
 
         listView.adapter = adapter
-        binding.rfid.setOnClickListener {
-            val intent= Intent(this, SettingsActivity2::class.java)
-            startActivity(intent)
-        }
 
         listView.setOnItemClickListener listView@{ _, _, position, _ ->
             val entitySetName = entitySetNameMap[adapter.getItem(position)!!]
             val context = this@EntitySetListActivity
             val intent: Intent = when (entitySetName) {
                 EntitySetName.MatDetailsSet -> Intent(context, MatDetailsSetActivity::class.java)
+                EntitySetName.CycleCounting -> Intent(context, MatDetailsSetActivity::class.java)
                 else -> return@listView
             }
             context.startActivity(intent)
@@ -128,6 +126,12 @@ class EntitySetListActivity : BaseActivity() {
             R.id.menu_settings -> {
                 LOGGER.debug("settings screen menu item selected.")
                 Intent(this, SettingsActivity::class.java).also {
+                    this.startActivity(it)
+                }
+                true
+            }R.id.menu_rfid_settings -> {
+                LOGGER.debug("rfid settings screen menu item selected.")
+                Intent(this, SettingsActivity2::class.java).also {
                     this.startActivity(it)
                 }
                 true

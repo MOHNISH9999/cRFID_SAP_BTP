@@ -101,6 +101,7 @@ class WelcomeActivity : AppCompatActivity() {
                             excludeEula = true,
                             excludeEulaWhenCreateAccount = true,
                             fullScreen = false
+
                     ))
                     .build()
         Flow.start(activity, flowContext) { _, resultCode, _ ->
